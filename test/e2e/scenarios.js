@@ -50,7 +50,6 @@ describe('PhoneCat App', function() {
     });
   });
 
-
   describe('Phone detail view', function() {
 
     beforeEach(function() {
@@ -58,8 +57,13 @@ describe('PhoneCat App', function() {
     });
 
 
-    it('should display nexus-s page', function() {
-      expect(binding('phone.name')).toBe('Nexus S');
+    it('should display placeholder page with phoneId', function() {
+      expect(binding('phoneId')).toBe('nexus-s');
     });
+
+    it('should display 4 thumbnail images in page with phoneId', function() {
+      expect(repeater('.phone-thumbs img').count()).toBe(5);
+    });
+
   });
 });
